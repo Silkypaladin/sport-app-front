@@ -1,6 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { StoreModule } from "@ngrx/store";
+import { Features } from "../state/app.features";
 import { MapRoutingModule } from "./map-routing.module";
 import { MapComponent } from './map.component';
 import { mapReducer } from "./state/map.reducer";
@@ -11,7 +12,7 @@ import { mapReducer } from "./state/map.reducer";
   ],
   imports: [
     CommonModule,
-    StoreModule.forFeature('map', mapReducer),
+    StoreModule.forFeature(Features.Map, mapReducer),
     MapRoutingModule
   ],
   providers: []

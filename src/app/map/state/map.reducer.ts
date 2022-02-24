@@ -1,13 +1,11 @@
 import { createReducer } from "@ngrx/store";
 
-export interface MapState {
-
-}
+export interface MapState {}
 
 const initialState = {
 
 };
 
-export const mapReducer = createReducer(
+export const mapReducer = createReducer<MapState>(
     initialState
-)
+);

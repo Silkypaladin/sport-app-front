@@ -1,6 +1,6 @@
 import * as AppState from '../../state/app.reducer';
-import { MapState } from './map.reducer';
+import { AuthState } from './auth.reducer';
 
 export interface State extends AppState.State {
-    mapState: MapState;
+    auth: AuthState
 }
