@@ -1,11 +1,11 @@
-import { createAction, props } from "@ngrx/store";
+import { createAction, props } from '@ngrx/store';
 
 export const getEventsSuccess = createAction(
-    '[Map API] Get Events Success',
-    props<{events: any[]}>()
+  '[Map API] Get Events Success',
+  props<{ events: any[] }>()
 );
 
 export const getEventsFailure = createAction(
-    '[Map API] Get Events Failure',
-    props<{errorMessage: string}>()
+  '[Map API] Get Events Failure',
+  props<{ errorMessage: string }>()
 );

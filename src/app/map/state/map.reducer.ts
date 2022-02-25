@@ -1,11 +1,7 @@
-import { createReducer } from "@ngrx/store";
+import { createReducer } from '@ngrx/store';
 
 export interface MapState {}
 
-const initialState = {
+const initialState = {};
 
-};
-
-export const mapReducer = createReducer<MapState>(
-    initialState
-);
+export const mapReducer = createReducer<MapState>(initialState);

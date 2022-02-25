@@ -1,9 +1,7 @@
-import { createReducer } from "@ngrx/store";
+import { createReducer } from '@ngrx/store';
 
-export interface AuthState {};
+export interface AuthState {}
 
 const initialState: AuthState = {};
 
-export const authReducer = createReducer<AuthState>(
-    initialState
-);
+export const authReducer = createReducer<AuthState>(initialState);

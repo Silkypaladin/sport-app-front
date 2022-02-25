@@ -3,3 +3,7 @@ export interface LoginData {
   password: string;
   rememberMe: boolean;
 }
+
+export interface Token {
+  id_token: string;
+}
