@@ -1,1 +1,12 @@
-<p>event-list works!</p>
+<div *ngIf="loading$ | async; else loadingSpinner" class="container">
+  <div
+    class="list-items-container"
+    *ngIf="activePublicEvents$ | async as activePublicEvents"
+  >
+    <app-event-list-item
+      *ngFor="let event of activePublicEvents"
+      [event]="event"
+    ></app-event-list-item>
+  </div>
+</div>
+<ng-template #loadingSpinner> </ng-template>

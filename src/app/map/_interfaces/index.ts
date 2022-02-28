@@ -1,1 +1,4 @@
-export interface Event {}
+export interface Event {
+  id: string;
+  name: string;
+}

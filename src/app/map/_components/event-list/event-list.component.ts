@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Event } from '../../_interfaces';
+import { getActivePublicEvents, getLoading, State } from '../../_store';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-event-list',
@@ -6,7 +10,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event-list.component.scss'],
 })
 export class EventListComponent implements OnInit {
-  constructor() {}
+  loading$: Observable<boolean>;
+  activePublicEvents$: Observable<Event[]>;
 
-  ngOnInit(): void {}
+  constructor(private store: Store<State>) {}
+
+  ngOnInit(): void {
+    this.loading$ = this.store.select(getLoading);
+    this.activePublicEvents$ = this.store.select(getActivePublicEvents);
+  }
 }
