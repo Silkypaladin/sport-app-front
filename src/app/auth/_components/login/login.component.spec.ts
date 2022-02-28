@@ -11,17 +11,13 @@ describe('LoginComponent', () => {
   beforeEach(async () => {
     mockFormBuilder = jasmine.createSpyObj(['group']);
     await TestBed.configureTestingModule({
-      declarations: [ LoginComponent ],
-      providers: [
-        { provide: FormBuilder, useValue: mockFormBuilder }
-      ],
-    })
-    .compileComponents();
+      declarations: [LoginComponent],
+      providers: [{ provide: FormBuilder, useValue: mockFormBuilder }],
+    }).compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
   });
-
 });

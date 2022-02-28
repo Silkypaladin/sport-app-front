@@ -1,5 +1,9 @@
 export interface LoginData {
-  username: string;
+  login: string;
   password: string;
   rememberMe: boolean;
+}
+
+export interface Token {
+  id_token: string;
 }

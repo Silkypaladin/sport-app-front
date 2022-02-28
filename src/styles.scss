@@ -2,11 +2,16 @@
 
 $font-family: 'Poppins', sans-serif;
 
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
 
-body, button, input, a {
+body,
+button,
+input,
+a {
   font-family: $font-family;
 }
 
@@ -14,7 +19,9 @@ body {
   margin: 0;
 }
 
-h1, h2, p {
+h1,
+h2,
+p {
   margin: 0;
 }
 
