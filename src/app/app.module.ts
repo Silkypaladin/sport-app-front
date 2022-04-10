@@ -9,6 +9,17 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { rootReducer } from './store/app.reducer';
 import { HttpClientModule } from '@angular/common/http';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { pl_PL } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import pl from '@angular/common/locales/pl';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { IconsProviderModule } from './icons-provider.module';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+
+registerLocaleData(pl);
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,8 +33,13 @@ import { HttpClientModule } from '@angular/common/http';
     }),
     EffectsModule.forRoot([]),
     HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    IconsProviderModule,
+    NzLayoutModule,
+    NzMenuModule,
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: pl_PL }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
