@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import * as AuthActions from './auth.actions';
+import { loginError, loginStart, loginSuccess, logout } from './auth.actions';
 
 export interface AuthState {
   token: string;
@@ -13,26 +13,31 @@ const initialState: AuthState = {
   authError: '',
 };
 
+// SELECTORS
+export const token = (state: AuthState) => state.token;
+export const loading = (state: AuthState) => state.loading;
+export const authError = (state: AuthState) => state.authError;
+
 export const authReducer = createReducer<AuthState>(
   initialState,
-  on(AuthActions.loginStart, (state) => ({
+  on(loginStart, (state) => ({
     ...state,
     authError: '',
     loading: true,
   })),
-  on(AuthActions.loginSuccess, (state, { token }) => ({
+  on(loginSuccess, (state, { token }) => ({
     ...state,
     token: token,
     loading: false,
     authError: '',
   })),
-  on(AuthActions.loginError, (state, { message }) => ({
+  on(loginError, (state, { message }) => ({
     ...state,
     token: '',
     loading: false,
     authError: message,
   })),
-  on(AuthActions.logout, (state) => ({
+  on(logout, (state) => ({
     ...state,
     token: '',
     loading: false,

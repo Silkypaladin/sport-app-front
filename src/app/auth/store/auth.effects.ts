@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { AuthProxyService } from '../_proxy/auth-proxy.service';
+import { AuthProxyService } from '../proxy/auth-proxy.service';
 import { catchError, map, of, switchMap, tap } from 'rxjs';
 import * as AuthActions from './auth.actions';
 import { Router } from '@angular/router';
